@@ -13,5 +13,5 @@ fi
 echo "Building with NDK ${NDK_VERSION}"
 
 docker build -t ${IMAGE_NAME} \
-  --build-arg=NDK_VERSION=${NDK_VERSION}
+  --build-arg=NDK_VERSION=${NDK_VERSION} \
   .
