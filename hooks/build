@@ -10,6 +10,8 @@ elif [[ $DOCKER_TAG = ndk-* ]]
   NDK_VERSION=${DOCKER_TAG#ndk-}
 fi
 
+echo "Building with NDK ${NDK_VERSION}"
+
 docker build -t ${IMAGE_NAME} \
   --build-arg=NDK_VERSION=${NDK_VERSION}
   .
