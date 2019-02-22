@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+LATEST_NDK=19b
+
+if [ "$DOCKER_TAG" = "latest" ]; then
+  NDK_VERSION=${LATEST_NDK}
+elif [[ $DOCKER_TAG = ndk-* ]]
+  NDK_VERSION=${DOCKER_TAG#ndk-}
+fi
+
+docker build -t ${IMAGE_NAME} \
+  --build-arg=NDK_VERSION=${NDK_VERSION}
+  .
