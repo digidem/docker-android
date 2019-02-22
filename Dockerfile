@@ -70,4 +70,5 @@ RUN cd ~ && mkdir ~/.android && echo '### User Sources for Android SDK Manager' 
         "build-tools;$ANDROID_TOOLS_VERSION" \
         "add-ons;addon-google_apis-google-23" \
         "system-images;android-21;google_apis;armeabi-v7a" \
+        "system-images;android-27;default;x86" \
         "extras;android;m2repository"
