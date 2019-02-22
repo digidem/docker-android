@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+printenv
+
 LATEST_NDK=19b
 
 if [ "$DOCKER_TAG" = "latest" ]; then
