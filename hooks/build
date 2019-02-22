@@ -6,7 +6,7 @@ LATEST_NDK=19b
 
 if [ "$DOCKER_TAG" = "latest" ]; then
   NDK_VERSION=${LATEST_NDK}
-elif [[ $DOCKER_TAG = ndk-* ]]
+elif [[ $DOCKER_TAG = ndk-* ]]; then
   NDK_VERSION=${DOCKER_TAG#ndk-}
 fi
 
