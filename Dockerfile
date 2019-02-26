@@ -72,3 +72,6 @@ RUN cd ~ && mkdir ~/.android && echo '### User Sources for Android SDK Manager' 
         "system-images;android-21;google_apis;armeabi-v7a" \
         "system-images;android-27;default;x86" \
         "extras;android;m2repository"
+
+# Create android emulator
+RUN echo no | avdmanager create avd -n Nexus_5X_API_27 -k "system-images;android-27;default;x86" -d "Nexus 5X" --sdcard 100M
