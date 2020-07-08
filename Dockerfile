@@ -21,4 +21,5 @@ ENV ARCH=x86_64 \
 # API 28 system image
 RUN sdkmanager --install "system-images;android-${EMULATOR_API_LEVEL};${TARGET};${ARCH}" \
     "platforms;android-${EMULATOR_API_LEVEL}" \
-    "emulator"
+    "emulator" && \
+    sdkmanager --list
