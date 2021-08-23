@@ -36,6 +36,7 @@ RUN apt update -qq && apt install -qq -y --no-install-recommends \
         libc++1-10 \
         libgl1 \
         libtcmalloc-minimal4 \
+        libtool \
         make \
         openjdk-8-jdk-headless \
         openssh-client \
