@@ -12,7 +12,7 @@ ARG BUCK_VERSION=2020.10.21.01
 ARG NDK_VERSION=21.4.7075529
 ARG NODE_VERSION=14.x
 ARG WATCHMAN_VERSION=4.9.0
-ARG SYSTEM_IMAGE="android-28;default;x86_64"
+ARG SYSTEM_IMAGE=android-28;default;x86_64
 
 # set default environment variables, please don't remove old env for compatibilty issue
 ENV ADB_INSTALL_TIMEOUT=10
