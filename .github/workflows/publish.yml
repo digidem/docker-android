@@ -37,7 +37,7 @@ jobs:
         with:
           push: true
           tags: ${{ steps.tags.outputs.tags }}
-          build_args: |
+          build-args: |
             ANDROID_BUILD_VERSION=29
             ANDROID_TOOLS_VERSION=29.0.3
             NDK_VERSION=21.4.7075529
