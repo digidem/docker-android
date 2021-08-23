@@ -54,6 +54,16 @@ RUN apt update -qq && apt install -qq -y --no-install-recommends \
         sudo \
         ninja-build \
         zip \
+    # for x86 emulators
+    && apt-get install -qq -y \
+      libxtst6 \
+      libnss3-dev \
+      libnspr4 \
+      libxss1 \
+      libasound2 \
+      libatk-bridge2.0-0 \
+      libgtk-3-0 \
+      libgdk-pixbuf2.0-0 \
     && gem install bundler \
     && rm -rf /var/lib/apt/lists/*;
 
