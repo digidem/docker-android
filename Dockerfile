@@ -27,6 +27,9 @@ ENV PATH=${ANDROID_NDK}:${ANDROID_HOME}/cmdline-tools/latest/bin:${ANDROID_HOME}
 # Install system dependencies
 RUN apt update -qq && apt install -qq -y --no-install-recommends \
         apt-transport-https \
+        autoconf \
+        autotools-dev \
+        build-essential \
         curl \
         file \
         gcc \
