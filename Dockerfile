@@ -28,8 +28,7 @@ ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 ENV PATH=${ANDROID_NDK}:${ANDROID_HOME}/cmdline-tools/latest/bin:${ANDROID_HOME}/emulator:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:/opt/buck/bin/:${PATH}
 
 # Install system dependencies
-RUN set -o xtrace \
-    && apt update -qq && apt install -qq -y --no-install-recommends \
+RUN apt update -qq && apt install -qq -y --no-install-recommends \
         apt-transport-https \
         autoconf \
         autotools-dev \
@@ -75,7 +74,6 @@ RUN set -o xtrace \
     && ln -s python3 /usr/bin/python \
     && gem install bundler \
     && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers \
-    && rm -rf /var/lib/apt/lists/* \
     && sh -c 'echo "en_US.UTF-8 UTF-8" > /etc/locale.gen' \
     && locale-gen \
     && update-locale LANG=en_US.UTF-8 \
@@ -103,4 +101,4 @@ RUN set -o xtrace \
         "cmake;$CMAKE_VERSION" \
         "system-images;android-21;google_apis;armeabi-v7a" \
         "system-images;android-28;default;x86_64" \
-        "ndk;$NDK_VERSION"
+        "ndk;$NDK_VERSION";
