@@ -49,6 +49,7 @@ RUN apt update -qq && apt install -qq -y --no-install-recommends \
         openjdk-8-jdk-headless \
         openssh-client \
         patch \
+        python2 \
         python3 \
         python3-distutils \
         rsync \
@@ -82,7 +83,8 @@ RUN apt update -qq && apt install -qq -y --no-install-recommends \
     && apt-get update -qq \
     && apt-get install -qq -y --no-install-recommends nodejs \
     && rm -rf /var/lib/apt/lists/* \
-    # download and unpack android&& wget -q https://dl.google.com/android/repository/${SDK_VERSION} -O /tmp/sdk.zip \
+    # download and unpack android
+    && wget -q https://dl.google.com/android/repository/${SDK_VERSION} -O /tmp/sdk.zip \
     && mkdir -p ${ANDROID_HOME}/cmdline-tools \
     && unzip -q -d ${ANDROID_HOME}/cmdline-tools /tmp/sdk.zip \
     && mv ${ANDROID_HOME}/cmdline-tools/cmdline-tools ${ANDROID_HOME}/cmdline-tools/latest \
