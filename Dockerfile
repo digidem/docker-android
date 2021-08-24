@@ -42,6 +42,8 @@ RUN apt update -qq && apt install -qq -y --no-install-recommends \
         lcov \
         libc++1-10 \
         libgl1 \
+        libglu1-mesa \
+        libpulse0 \
         libtcmalloc-minimal4 \
         libtool \
         locales \
