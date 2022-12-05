@@ -11,7 +11,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
 
 
 # set default build arguments
-ARG SDK_VERSION=commandlinetools-linux-7302050_latest.zip
+ARG SDK_VERSION=commandlinetools-linux-9123335_latest.zip
 ARG ANDROID_BUILD_VERSION=31
 ARG ANDROID_TOOLS_VERSION=30.0.3
 ARG BUCK_VERSION=2022.05.05.01
