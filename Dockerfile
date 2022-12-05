@@ -107,7 +107,6 @@ RUN apt update -qq && apt install -qq -y --no-install-recommends \
     && curl -sL https://deb.nodesource.com/setup_${NODE_VERSION} | bash - \
     && apt-get update -qq \
     && apt-get install -qq -y --no-install-recommends nodejs \
-    && npm i -g yarn \
     && rm -rf /var/lib/apt/lists/* \
     # download and install buck using the java11 pex from Jitpack
     && curl -L https://jitpack.io/com/github/facebook/buck/v${BUCK_VERSION}/buck-v${BUCK_VERSION}-java11.pex -o /tmp/buck.pex \
