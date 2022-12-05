@@ -16,7 +16,7 @@ ARG ANDROID_BUILD_VERSION=31
 ARG ANDROID_TOOLS_VERSION=30.0.3
 ARG BUCK_VERSION=2022.05.05.01
 ARG NDK_VERSION=21.4.7075529
-ARG NODE_VERSION=12.x
+ARG NODE_VERSION=16
 ARG CMAKE_VERSION=3.18.1
 ARG WATCHMAN_VERSION=4.9.0
 
@@ -103,11 +103,12 @@ RUN apt update -qq && apt install -qq -y --no-install-recommends \
     && sh -c 'echo "en_US.UTF-8 UTF-8" > /etc/locale.gen' \
     && locale-gen \
     && update-locale LANG=en_US.UTF-8 \
-    # install nodejs and yarn packages from nodesource
-    && curl -sL https://deb.nodesource.com/setup_${NODE_VERSION} | bash - \
-    && apt-get update -qq \
-    && apt-get install -qq -y --no-install-recommends nodejs \
-    && rm -rf /var/lib/apt/lists/* \
+    # install nodejs using n
+    && curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o n \
+    && bash n $NODE_VERSION \
+    && rm n \
+    && npm install -g n \
+    && npm install -g yarn \
     # download and install buck using the java11 pex from Jitpack
     && curl -L https://jitpack.io/com/github/facebook/buck/v${BUCK_VERSION}/buck-v${BUCK_VERSION}-java11.pex -o /tmp/buck.pex \
     && mv /tmp/buck.pex /usr/local/bin/buck \
