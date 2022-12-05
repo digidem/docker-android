@@ -134,5 +134,4 @@ RUN apt update -qq && apt install -qq -y --no-install-recommends \
         "system-images;android-28;default;x86_64" \
         "ndk;$NDK_VERSION" \
     # workaround buck clang version detection by symlinking
-    && rm -rf ${ANDROID_HOME}/.android \
     && ln -s ${ANDROID_NDK}/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/9.0.9 ${ANDROID_NDK}/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/9.0.8
