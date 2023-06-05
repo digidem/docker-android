@@ -1,16 +1,15 @@
-## Android Docker Image for react native
-![Build Docker image](https://github.com/react-native-community/docker-android/workflows/Build%20Docker%20image/badge.svg)
-![Publish](https://github.com/react-native-community/docker-android/workflows/Publish/badge.svg)
-[![Docker Pulls](https://img.shields.io/docker/pulls/reactnativecommunity/react-native-android.svg?maxAge=3600)](https://hub.docker.com/r/reactnativecommunity/react-native-android) 
+## Android Docker Image for React Native
 
+![Build Docker image](https://github.com/digidem/docker-android/workflows/Build%20Docker%20image/badge.svg)
+![Publish](https://github.com/digidem/docker-android/workflows/Publish/badge.svg)
+[![Docker Pulls](https://img.shields.io/docker/pulls/digidem/docker-android.svg?maxAge=3600)](https://hub.docker.com/r/digidem/docker-android)
 
-## Motivation
-This is an implementation of https://github.com/react-native-community/discussions-and-proposals/blob/master/proposals/0005-Official-Docker.md.
+This is an adapted version of https://github.com/react-native-community/docker-android (as of https://github.com/react-native-community/docker-android/tree/694cfefb9da4aa140282eb8911f0432fb6346ccb) for usage in [Mapeo Mobile](https://github.com/digidem/mapeo-mobile/).
 
-## Showcase
-https://github.com/react-native-community/ci-sample
+Key differences:
+
+- installs emulator and its depedendencies
 
 ## Dockerhub Image
-see https://hub.docker.com/r/reactnativecommunity/react-native-android/
 
-Original version is split from react-native repo, see https://github.com/facebook/react-native/blob/988366a4179d87d667e5d9396efdfba4cbbe0b2e/ContainerShip/Dockerfile.android-base.
+See https://hub.docker.com/r/digidem/docker-android/
