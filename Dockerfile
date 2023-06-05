@@ -115,13 +115,12 @@ RUN curl -sS https://dl.google.com/android/repository/${SDK_VERSION} -o /tmp/sdk
     && unzip -q -d ${ANDROID_HOME}/cmdline-tools /tmp/sdk.zip \
     && mv ${ANDROID_HOME}/cmdline-tools/cmdline-tools ${ANDROID_HOME}/cmdline-tools/latest \
     && rm /tmp/sdk.zip \
-    && mkdir -p /root/.android \
-    && touch /root/.android/repositories.cfg \
+    && yes | sdkmanager --licenses \
     && wget -O /usr/bin/android-wait-for-emulator https://raw.githubusercontent.com/travis-ci/travis-cookbooks/master/community-cookbooks/android-sdk/files/default/android-wait-for-emulator \
     && chmod +x /usr/bin/android-wait-for-emulator \
-    && yes | sdkmanager --licenses \
     && yes | sdkmanager "platform-tools" \
-    "emulator" \
+    && yes | sdkmanager "emulator" \
+    && yes | sdkmanager \
     "platforms;android-$ANDROID_BUILD_VERSION" \
     "build-tools;$ANDROID_TOOLS_VERSION" \
     "cmake;$CMAKE_VERSION" \
