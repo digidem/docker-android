@@ -10,7 +10,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
     LANGUAGE=en_US:en
 
 # set default build arguments
-ARG SDK_VERSION=commandlinetools-linux-9123335_latest.zip
+ARG SDK_VERSION=commandlinetools-linux-9477386_latest.zip
 ARG ANDROID_BUILD_VERSION=31
 ARG ANDROID_TOOLS_VERSION=30.0.3
 ARG NDK_VERSION=24.0.8215888
@@ -127,5 +127,4 @@ RUN curl -sS https://dl.google.com/android/repository/${SDK_VERSION} -o /tmp/sdk
     "system-images;android-21;google_apis;armeabi-v7a" \
     "system-images;android-28;default;x86_64" \
     "ndk;$NDK_VERSION" \
-    && rm -rf ${ANDROID_HOME}/.android \
     && chmod 777 -R /opt/android
