@@ -26,7 +26,7 @@ ENV ANDROID_NDK=${ANDROID_HOME}/ndk/$NDK_VERSION
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 ENV CMAKE_BIN_PATH=${ANDROID_HOME}/cmake/$CMAKE_VERSION/bin
 
-ENV PATH=${ANDROID_NDK}:${CMAKE_BIN_PATH}:${ANDROID_HOME}/cmdline-tools/latest/bin:${ANDROID_HOME}/emulator:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${PATH}
+ENV PATH=${ANDROID_NDK}:${CMAKE_BIN_PATH}:${ANDROID_HOME}/cmdline-tools/latest/bin:${ANDROID_HOME}/emulator:${ANDROID_HOME}/platform-tools:${PATH}
 
 # Install system dependencies for installing and running emulator
 RUN apt update -qq && apt install -qq -y --no-install-recommends \
