@@ -2,7 +2,7 @@
 
 set -e
 
-echo no | avdmanager create avd -n testEmulator -k "system-images;android-21;google_apis;armeabi-v7a" --force
+echo no | avdmanager create avd -n testEmulator -k "system-images;android-21;google_apis;armeabi-v7a"
 emulator -avd testEmulator -no-audio -no-cache -no-snapshot -no-window &
 
 echo "Waiting until the device is ready"
