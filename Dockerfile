@@ -115,6 +115,10 @@ RUN curl -sS https://dl.google.com/android/repository/${SDK_VERSION} -o /tmp/sdk
     && unzip -q -d ${ANDROID_HOME}/cmdline-tools /tmp/sdk.zip \
     && mv ${ANDROID_HOME}/cmdline-tools/cmdline-tools ${ANDROID_HOME}/cmdline-tools/latest \
     && rm /tmp/sdk.zip \
+    # Most likely an artifact to make sure adb works properly on initialization e.g. https://github.com/mvt-project/mvt/issues/165#issuecomment-903132279
+    && mkdir -p /root/.android \
+    # Most likely an artifact of an issue similar to https://stackoverflow.com/questions/43433542/stuck-at-android-repositories-cfg-could-not-be-loaded
+    && touch /root/.android/repositories.cfg \
     && yes | sdkmanager --licenses \
     && wget -O /usr/bin/android-wait-for-emulator https://raw.githubusercontent.com/travis-ci/travis-cookbooks/master/community-cookbooks/android-sdk/files/default/android-wait-for-emulator \
     && chmod +x /usr/bin/android-wait-for-emulator \
