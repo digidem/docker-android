@@ -8,7 +8,7 @@ This is an adapted version of https://github.com/react-native-community/docker-a
 
 Key differences:
 
-- installs emulator and its depedendencies
+- installs emulator and its dependencies
 
 ## Dockerhub Image
 
